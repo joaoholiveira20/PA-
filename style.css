@@ -6,13 +6,30 @@
 }
 
 body {
-    background-color: aqua;
+    font-family: Arial;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.index {
+    background-color: rgb(187, 242, 242);
     font-family: Arial;
 }
 
+
+.segunda-pagina {
+    background-color: rgb(135, 245, 236);
+}
+
+.terceira-pagina {
+    background-image: url(assets/logo4.avif);
+}
 h2 {
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
 }
@@ -41,4 +58,23 @@ button {
     cursor: pointer;
     padding: 5px 30px;
     border-radius: 20px;
+}
+
+ol {
+    padding: 30px auto;
+    text-align: center;
+    list-style-position: inside;
+}
+
+li {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px;
+    padding: 25px;
+}
+
+.tit.Terceira-pagina {
+    padding: 10px;
+    margin: auto;
+    
 }
