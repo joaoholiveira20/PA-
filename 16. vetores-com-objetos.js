@@ -10,7 +10,7 @@ const listaDeUsuarios = [
     {nome: "Ana", idade: 25},
     {nome: "Maria", idade: 35},
     {nome: "Joana", idade: 45},
-    {nome: "José", idade: 16},
+    {nome: "José", idade: 15}
 ]
 
 // Percorrendo e exibindo os elementos do vetor.
@@ -50,7 +50,21 @@ pares.forEach( usuario =>
 )
 
 console.log("\nNa lista de nomes, mostre todos os nomes com foreach.")
-const nomes = listaDeUsuarios.filter(usuario => usuario.nome)
-nomes.forEach( usuario => 
-    console.log(`Nomes dos usuários: ${usuario.nome}`)
-)
+const nomes = listaDeUsuarios.map(u => u.nome)
+nomes.forEach(nome => console.log(`Nome: ${nome}`))
+
+
+console.log("\nNa lista de usuários, encontre um usuário.")
+const usuarioEncontrado = listaDeUsuarios.find(u => u.nome === "Ana")
+console.log(usuarioEncontrado)
+console.log(`Nome: ${usuarioEncontrado.nome} \nIdade: ${usuarioEncontrado.idade}`)
+
+
+console.log("\nNa lista de usuários, encontre um usuário com idade de 45 anos.")
+const usuarioencontradoidade = listaDeUsuarios.find(u => u.idade == 45)
+console.log(`usuário de 45 anos é: ${usuarioencontradoidade.nome}`)
+
+
+console.log("\nNa lista de usuários, Somando todas as idades")
+const somaIdades = listaDeUsuarios.reduce((total, usuario) => total + usuario.idade, 0 )
+console.log(somaIdades)
