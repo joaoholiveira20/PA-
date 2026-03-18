@@ -16,15 +16,17 @@ body {
     padding: 20px;
 }
 
-/* Animação de entrada do card */
-@keyframes entradaTricolor {
+/* 🍎 NOVA Animação no estilo Apple: Fade in, Blur e Spring */
+@keyframes entradaApple {
     0% {
         opacity: 0;
-        transform: translateY(30px) scale(0.95);
+        transform: translateY(40px) scale(0.9);
+        filter: blur(12px); /* O famoso desfoque inicial da Apple */
     }
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
+        filter: blur(0);
     }
 }
 
@@ -38,11 +40,15 @@ body {
     /* Borda superior tricolor: Azul, Branco e Vermelho */
     border-top: 8px solid;
     border-image: linear-gradient(to right, #005a8f 33%, #ffffff 33%, #ffffff 66%, #cc0000 66%) 1;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    
+    /* Sombra mais suave e difusa, estilo macOS */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 10px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     
-    /* Ativando a animação */
-    animation: entradaTricolor 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    /* 🍎 Ativando a nova animação com uma curva elástica (Spring) */
+    .animation{
+        animation: entradaApple 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
 }
 
 /* Estilo do Logotipo SVG */
@@ -52,7 +58,7 @@ body {
     height: auto;
     margin-bottom: 15px;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Transição mais suave */
 }
 
 .logo-bahia:hover {
@@ -94,7 +100,7 @@ input[type="number"] {
     border: 2px solid #e0e6ed;
     border-radius: 10px;
     outline: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Suavidade no clique */
 }
 
 /* Efeito ao clicar na caixa de texto (Fica Vermelho) */
@@ -124,7 +130,7 @@ button {
     letter-spacing: 1px;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     box-shadow: 0 4px 12px rgba(0, 90, 143, 0.3);
     margin-top: 10px;
     margin-bottom: 25px;
@@ -133,12 +139,12 @@ button {
 /* Hover do botão (Muda para Vermelho) */
 button:hover {
     background: #cc0000;
-    box-shadow: 0 6px 16px rgba(204, 0, 0, 0.4);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(204, 0, 0, 0.4);
+    transform: translateY(-3px) scale(1.02); /* Leve expansão ao passar o mouse */
 }
 
 button:active {
-    transform: translateY(1px);
+    transform: translateY(1px) scale(0.98); /* Efeito de aperto realístico */
 }
 
 /* Área de resultados */

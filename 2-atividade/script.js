@@ -12,10 +12,15 @@ function Gerarcalculos() {
         return;
     }
 
+    let maior = Math.max(numero1, numero2);
+    let menor = Math.min(numero1, numero2);
+
     resultadoDiv.innerHTML += `<h2> Resultados dos cálculos entre ${numero1} e ${numero2}</h2>`;
-    resultadoDiv.innerHTML += `<p> média: ${numero1} + ${numero2} / 2 = ${ (numero1 + numero2) / 2 } </p>`;
-    resultadoDiv.innerHTML += `<p> produto: ${numero1} * ${numero2} = ${numero1 * numero2} </p>`;
-    resultadoDiv.innerHTML += `<p> ${numero1} / ${numero2} = ${numero1 / numero2} </p>`;
+    resultadoDiv.innerHTML += `<p> média = ${ (numero1 + numero2) / 2 } </p>`;
+    resultadoDiv.innerHTML += `<p> produto = ${numero1 * numero2} </p>`;
+    resultadoDiv.innerHTML += `<p> Soma = ${numero1 + numero2} </p>`;
+    resultadoDiv.innerHTML += `<p> Maior número: ${maior} </p>`;
+    resultadoDiv.innerHTML += `<p> Menor número: ${menor} </p>`;
 }
 
 const botaoGerar = document.getElementById("btnGerar");
