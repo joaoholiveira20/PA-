@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Fundo neutro e limpo */
+body {
+    background-color: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Estilo para a imagem do Logotipo - Versão Maior */
+.logo {
+    width: 170px;         /* Aumentamos de 80px para 120px */
+    height: 170px;        /* Aumentamos a altura junto para manter a proporção */
+    object-fit: contain;  /* Impede que a imagem fique esticada ou deformada */
+    margin-bottom: 15px;  /* Espaço de respiro entre a logo e o título */
+}
+/* 🍎 A Receita da Animação Apple */
+@keyframes entradaApple {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+        filter: blur(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* O Cartão Principal */
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    
+    /* Borda superior temática: Verde e Amarelo do Brasil 🇧🇷 */
+    border-top: 8px solid;
+    border-image: linear-gradient(to right, #009c3b 50%, #ffdf00 50%) 1;
+    
+    /* Chamando a animação */
+    animation: entradaApple 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Estilo do Logotipo e Título */
+.logo {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 1.6rem;
+    color: #1e293b;
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Estilo do Input */
+input {
+    width: 100%;
+    padding: 14px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+/* Efeito ao clicar no input (Borda Verde) */
+input:focus {
+    border-color: #009c3b;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 156, 59, 0.2);
+}
+
+/* Estilo do Botão */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #009c3b; /* Verde Brasil */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s;
+}
+
+button:hover {
+    background-color: #007a2e; /* Verde mais escuro no hover */
+}
+
+/* Efeito de "Afundar" ao clicar */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Classe para o JavaScript animar o resultado */
+.resultado-animado {
+    animation: entradaApple 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border-left: 5px solid #009c3b; /* Linha lateral verde padrão */
+    text-align: left;
+}

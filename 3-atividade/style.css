@@ -1,0 +1,128 @@
+/* Importando uma fonte estilo Apple (Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Fundo imitando pontilhado de caderno leve */
+body {
+    background-color: #f4f6f8; 
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* 🍎 A Receita da Animação Apple */
+@keyframes entradaApple {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+        filter: blur(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* O Cartão Principal */
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    
+    /* Borda superior lembrando ônibus escolar / lápis */
+    border-top: 8px solid #facc15; 
+    
+    /* Animação ativada direto no container! */
+    animation: entradaApple 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Estilo do Logotipo e Título */
+.logo {
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Estilo dos Inputs */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+/* Efeito quando o usuário clica para digitar */
+input:focus {
+    border-color: #3b82f6; /* Azul caneta */
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Estilo do Botão */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #3b82f6; /* Azul caneta */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    
+    /* Prepara o botão para a animação de clique */
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* 🔥 O efeito de "Afundar" ao clicar! */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Classe que você vai usar no JavaScript para animar o resultado */
+.resultado-animado {
+    animation: entradaApple 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border-left: 5px solid #10b981; /* Linha verde de aprovação */
+    text-align: left;
+}
