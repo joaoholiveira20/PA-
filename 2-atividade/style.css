@@ -16,12 +16,12 @@ body {
     padding: 20px;
 }
 
-/* 🍎 NOVA Animação no estilo Apple: Fade in, Blur e Spring */
+/* 🍎 A Receita da Animação Apple (Desfoque, Escala e Posição) */
 @keyframes entradaApple {
     0% {
         opacity: 0;
         transform: translateY(40px) scale(0.9);
-        filter: blur(12px); /* O famoso desfoque inicial da Apple */
+        filter: blur(12px);
     }
     100% {
         opacity: 1;
@@ -37,6 +37,7 @@ body {
     max-width: 420px;
     padding: 40px 30px;
     border-radius: 16px;
+    
     /* Borda superior tricolor: Azul, Branco e Vermelho */
     border-top: 8px solid;
     border-image: linear-gradient(to right, #005a8f 33%, #ffffff 33%, #ffffff 66%, #cc0000 66%) 1;
@@ -45,10 +46,8 @@ body {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 10px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     
-    /* 🍎 Ativando a nova animação com uma curva elástica (Spring) */
-    .animation{
-        animation: entradaApple 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    }
+    /* 🍏 Chamando a animação elástica direto no container! */
+    animation: entradaApple 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 /* Estilo do Logotipo SVG */
@@ -171,4 +170,11 @@ button:active {
 #Resultadocalculos p:last-child {
     border-bottom: none;
     margin-bottom: 0;
+}
+
+/* A classe que o JavaScript chama quando clica no botão */
+.resultado-animado {
+    /* Chamando a mesma receita da Apple, mas em 0.5s para ser mais rapidinho */
+    animation: entradaApple 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    margin-top: 20px;
 }
