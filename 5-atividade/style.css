@@ -1,0 +1,110 @@
+/* Importando uma fonte mais amigável e arredondada */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka', sans-serif;
+    
+    /* CONFIGURAÇÃO DA FOTO DE FUNDO */
+    /* Substitua a URL abaixo pelo link ou arquivo da sua imagem de fundo */
+    /* O linear-gradient ajuda a escurecer um pouco a foto para a caixa branca ganhar destaque */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Centralizando a caixa na tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    /* Bordas temáticas: topo vermelho (tomate) e base verde (folha) */
+    border-top: 8px solid #ff6347; 
+    border-bottom: 8px solid #4CAF50; 
+}
+
+/* CONFIGURAÇÃO DA FOTO DO LOGOTIPO */
+.logo {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%; /* Deixa a logo redonda. Se quiser quadrada, apague esta linha */
+    margin-bottom: 10px;
+    border: 4px solid #ff6347; /* Bordinha vermelha em volta da logo */
+    padding: 3px;
+    background-color: #fff;
+}
+
+h1 {
+    color: #d32f2f; /* Vermelho tomate mais escuro para facilitar a leitura */
+    margin-top: 0;
+    font-size: 2.2em;
+    letter-spacing: 2px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.1em;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Impede que o input vaze da caixa principal */
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+    text-align: center;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #ff6347; /* Fica vermelho ao ser clicado */
+}
+
+button {
+    background-color: #4CAF50; /* Botão verde lembrando a folha do tomate */
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    width: 100%;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: #388E3C; /* Fica um verde mais escuro ao passar o mouse */
+}
+
+button:active {
+    transform: scale(0.98); /* Dá um efeitinho de afundar ao clicar */
+}
+
+#gerarResultado {
+    margin-top: 25px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #d32f2f; 
+    min-height: 30px;
+}

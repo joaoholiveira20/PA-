@@ -1,0 +1,134 @@
+/* Reset básico para manter o padrão em todos os navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo da página com imagem temática e overlay escuro para leitura */
+body {
+    background: linear-gradient(rgba(15, 32, 39, 0.8), rgba(32, 58, 67, 0.8), rgba(44, 83, 100, 0.8)), 
+                url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* O cartão branco onde ficam os inputs */
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Branco levemente transparente */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    border-top: 5px solid #0f4c81; /* Detalhe azul acadêmico no topo */
+}
+
+/* Estilo do seu logotipo */
+.logo {
+    display: block;
+    margin: 0 auto 15px auto; /* Centraliza a imagem */
+    width: 100px; /* Tamanho da imagem - ajuste conforme precisar */
+    height: auto;
+    border-radius: 50%; /* Deixa a imagem redonda, se quiser quadrada apague esta linha */
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #0f4c81; /* Azul acadêmico */
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Labels dos campos de texto */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+/* Campos de digitação (Inputs) */
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #0f4c81;
+    box-shadow: 0 0 5px rgba(15, 76, 129, 0.3);
+}
+
+/* Botão de gerar média */
+button {
+    width: 100%;
+    background-color: #28a745; /* Verde aprovação */
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    transform: scale(0.98); /* Efeito de clique */
+}
+
+/* Área onde o resultado do Javascript vai aparecer */
+#resultadoMedia {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 24px;
+    color: #0f4c81;
+}
+
+/* Classes extras para você usar no Javascript (opcional) */
+.aprovado {
+    color: #28a745 !important;
+}
+
+.reprovado {
+    color: #dc3545 !important; /* Vermelho */
+}
+
+/* 1. Criamos a "receita" da animação usando @keyframes */
+@keyframes aparecerSuave {
+    0% {
+        opacity: 0; /* Começa totalmente invisível */
+        transform: translateY(15px) scale(0.95); /* Começa um pouco mais baixo e menor */
+    }
+    100% {
+        opacity: 1; /* Fica totalmente visível */
+        transform: translateY(0) scale(1); /* Volta para a posição e tamanho originais */
+    }
+}
+
+/* 2. Criamos a classe que vai disparar a animação */
+.animar-resultado {
+    /* Aplica a animação 'aparecerSuave', dura meio segundo, 
+       tem um freio no final (ease-out) e para no último quadro (forwards) */
+    animation: aparecerSuave 0.5s ease-out forwards;
+}
