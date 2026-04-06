@@ -1,13 +1,16 @@
-import './style.css'
 
+import './style.css'
 function Mensagem() {
-    return (
-        // Comandos HTML.
-        <div classname='mensagem'>
-            <h1>Componente</h1>
-            <p>Estes é um componente com uma mensagem simples.</p>
-        </div>
-    )    
+    // JavaScript
+  return (
+    // HTML
+    <div className='mensagem'>
+      <h2>Componente</h2>
+      <p>Este é um componente com uma mensagem simples.</p>
+      <hr />
+    </div>
+  )
 }
+
 
 export default Mensagem
